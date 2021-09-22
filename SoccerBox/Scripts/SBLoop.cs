@@ -87,7 +87,8 @@ namespace jokerispunk
             foreach (string str in config.catchNamesContaining)
                 if (goName.Contains(str))
                 {
-                    other.transform.position = transform.position;
+                    //other.transform.position = transform.position;
+                    config.net._Respawn(other.transform);
                     break;
                 }
         }

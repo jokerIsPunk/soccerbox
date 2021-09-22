@@ -9,9 +9,12 @@ namespace jokerispunk
 {
     public class PilotTrigger : UdonSharpBehaviour
     {
-        public SBLoop loopRefs;
+        [Space(20)]
+        [Header("This architecture enables the update loop trigger only if the local player is within. It thereby skips unnecessary calls of OnPlayerTriggerStay for non-local players.")]
+        [Space(20)]
+        [Header("(do not change)")]
+        public SBConfig config;
         public Collider loopCollider;
-        public FootColliderCalibration calibProgram;
 
         private Collider thisCollider;
 
@@ -33,8 +36,8 @@ namespace jokerispunk
             _SetSoccerBoxState(true);
 
             // redo autocalibration, but not if player is using manual calibration
-            if (!calibProgram.manualDone)
-                calibProgram._DoAutoCalib();
+            if (!config.calibProgram.manualDone)
+                config.calibProgram._DoAutoCalib();
         }
 
         public override void OnPlayerTriggerExit(VRCPlayerApi player)
@@ -46,8 +49,10 @@ namespace jokerispunk
 
         public void _SetSoccerBoxState(bool state)
         {
-            loopRefs._SetCollidersState(state);
+            if (loopCollider == null) { config._UnexpectedFail(gameObject); return; }
+
             loopCollider.enabled = state;
+            config.loopRefs._SetCollidersState(state);
         }
     }
 }

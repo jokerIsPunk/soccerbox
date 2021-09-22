@@ -18,12 +18,10 @@ namespace jokerispunk
         public float autoCalibrationDelay = 3f;
 
         [Space(10)]
-        [Header("Manual Calibration config")]
-        public Transform manualCalPoint;
-
-        [Space(10)]
         [Header("(do not change)")]
-        public Transform rFootTarget, lFootTarget;
+        public Transform manualCalPoint;
+        public Transform rFootTarget;
+        public Transform lFootTarget;
 
         private VRCPlayerApi lp;
         [HideInInspector] public bool manualDone = false;
