@@ -13,7 +13,7 @@ namespace jokerispunk
         [Header("This architecture enables the update loop trigger only if the local player is within. It thereby skips unnecessary calls of OnPlayerTriggerStay for non-local players.")]
         [Space(20)]
         [Header("(do not change)")]
-        public SBConfig config;
+        public SoccerBox sb;
         public Collider loopCollider;
 
         private Collider thisCollider;
@@ -34,10 +34,6 @@ namespace jokerispunk
             if (!player.isLocal) return;
 
             _SetSoccerBoxState(true);
-
-            // redo autocalibration, but not if player is using manual calibration
-            if (!config.calibProgram.manualDone)
-                config.calibProgram._DoAutoCalib();
         }
 
         public override void OnPlayerTriggerExit(VRCPlayerApi player)
@@ -49,10 +45,14 @@ namespace jokerispunk
 
         public void _SetSoccerBoxState(bool state)
         {
-            if (loopCollider == null) { config._UnexpectedFail(gameObject); return; }
+            if (loopCollider == null) { sb._UnexpectedFail(gameObject); return; }
 
             loopCollider.enabled = state;
-            config.loopRefs._SetCollidersState(state);
+            sb.loopRefs._SetCollidersState(state);
+
+            // redo autocalibration on activate, but not if player is using manual calibration
+            if (state && !sb.calibProgram.manualDone)
+                sb.calibProgram._DoAutoCalib();
         }
     }
 }

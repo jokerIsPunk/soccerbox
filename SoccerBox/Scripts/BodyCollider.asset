@@ -25,7 +25,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11500000, guid: fbef50e4e160a474b95dd2be27d0b874, type: 3}
+    - {fileID: 11500000, guid: e4fbf53c48cc8e74891a73059fcc8b43, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -50,7 +50,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: config
+      Data: sb
     - Name: $v
       Entry: 7
       Data: 2|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -62,7 +62,7 @@ MonoBehaviour:
       Data: 4|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: jokerispunk.SBConfig, Assembly-CSharp
+      Data: jokerispunk.SoccerBox, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -77,10 +77,10 @@ MonoBehaviour:
       Data: VRCUdonUdonBehaviour
     - Name: symbolOriginalName
       Entry: 1
-      Data: config
+      Data: sb
     - Name: symbolUniqueName
       Entry: 1
-      Data: config
+      Data: sb
     - Name: symbolDefaultValue
       Entry: 6
       Data: 

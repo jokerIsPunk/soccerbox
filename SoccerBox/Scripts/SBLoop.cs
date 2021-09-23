@@ -10,8 +10,7 @@ namespace jokerispunk
     public class SBLoop : UdonSharpBehaviour
     {
         // config and gameobject refs
-        public SBConfig config;
-        private Transform sbObj;
+        public SoccerBox sb;
 
         // collider refs
         public Rigidbody rFootColl, lFootColl, rKneeColl, lKneeColl, headColl;
@@ -72,25 +71,6 @@ namespace jokerispunk
                 rb.transform.position = target;
                 Debug.Log("[SoccerBox] Body collider out of bounds! Resetting..");
             }
-        }
-
-        // a secondary net; this one just teleports the ball to the play area center
-        private void OnTriggerExit(Collider other)
-        {
-            // owner only
-            if (!Networking.IsOwner(other.gameObject)) return;
-
-            // filter for named objects, let everything else go
-            string goName = other.gameObject.name;
-            goName = goName.ToLower();
-
-            foreach (string str in config.catchNamesContaining)
-                if (goName.Contains(str))
-                {
-                    //other.transform.position = transform.position;
-                    config.net._Respawn(other.transform);
-                    break;
-                }
         }
 
         public void _SetCollidersState(bool state)

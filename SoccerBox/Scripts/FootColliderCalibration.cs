@@ -6,6 +6,8 @@ using VRC.Udon;
 
 namespace jokerispunk
 {
+    // this class contains logic for placing the foot colliders near the middle of the player's foot
+    // this is a challenge because player avatars' bone position, rotation, existence varies wildly
     public class FootColliderCalibration : UdonSharpBehaviour
     {
         [Space(10)]
