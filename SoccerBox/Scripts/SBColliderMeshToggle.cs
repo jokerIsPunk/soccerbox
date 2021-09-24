@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace jokerispunk
 {
-    // toggle the meshes of the body colliders
+    // toggle the meshes of the body colliders; for calibration and curiosity
     public class SBColliderMeshToggle : UdonSharpBehaviour
     {
         public Toggle toggle;
@@ -17,6 +17,7 @@ namespace jokerispunk
         void Start()
         {
             // create a MeshRenderer array and populate it with the meshes from the array of body collider gameobjects
+            // should prbably be an editor script but meh
             int colliderCount = sb.bodyCollidersGO.Length;
             meshes = new MeshRenderer[colliderCount];
             for (int i = 0; i < colliderCount; i++)

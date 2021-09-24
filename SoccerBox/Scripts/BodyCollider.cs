@@ -3,13 +3,12 @@ using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
-using jokerispunk;
 
 namespace jokerispunk
 {
     // this class does two things:
     // 1. handles network ownership consequences of body interaction with synced objects
-    // 2. does a little physics
+    // 2. some physics
     public class BodyCollider : UdonSharpBehaviour
     {
         public SoccerBox sb;
@@ -48,7 +47,7 @@ namespace jokerispunk
             // take ownership of the object before any physics is applied
             _ChangeOwnership(other.gameObject);
 
-            // instead of physics, on triggers it's just this physics-like script
+            // instead of physics, on triggers it's just this physics code
             other.attachedRigidbody.velocity = Vector3.zero;
             other.attachedRigidbody.angularVelocity = Vector3.zero;
         }

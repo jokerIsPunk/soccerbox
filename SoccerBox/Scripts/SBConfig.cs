@@ -12,7 +12,7 @@ namespace jokerispunk
         [Header("Note: Do NOT scale this parent object. Scale child object \"Play Area\" instead.")]
         [Space(20)]
         [Header("User configuration options:")]
-        [Tooltip("The net will catch any GameObject whose name contains any of these words.")]
+        [Tooltip("The net will catch any GameObject whose name contains any of these words. Additionally, those objects cannot be on the Pickup layer (use Walkthrough instead).")]
         public string[] catchNamesContaining = { "ball" };
         [Tooltip("Check this to ignore player body collisions with objects that don't contain the string \"ball\" in their name.")]
         public bool ballsOnly = false;

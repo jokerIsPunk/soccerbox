@@ -135,6 +135,8 @@ MonoBehaviour:
     - Name: tooltip
       Entry: 1
       Data: The net will catch any GameObject whose name contains any of these words.
+        Additionally, those objects cannot be on the Pickup layer (use Walkthrough
+        instead).
     - Name: 
       Entry: 8
       Data: 

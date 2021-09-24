@@ -23,8 +23,6 @@ namespace jokerispunk
         [Header("(do not change)")]
         public Transform manualCalPoint;
         public SoccerBox sb;
-        //public Transform rFootTarget;
-        //public Transform lFootTarget;
 
         private VRCPlayerApi lp;
         [HideInInspector] public bool manualDone = false;
@@ -56,18 +54,14 @@ namespace jokerispunk
             HumanBodyBones footBone;
             HumanBodyBones kneeBone;
             HumanBodyBones toeBone;
-            if (isRLeg)
-            {
+            if (isRLeg) {
                 footBone = HumanBodyBones.RightFoot;
                 kneeBone = HumanBodyBones.RightLowerLeg;
-                toeBone = HumanBodyBones.RightToes;
-            }
-            else
-            {
+                toeBone = HumanBodyBones.RightToes; }
+            else {
                 footBone = HumanBodyBones.LeftFoot;
                 kneeBone = HumanBodyBones.LeftLowerLeg;
-                toeBone = HumanBodyBones.LeftToes;
-            }
+                toeBone = HumanBodyBones.LeftToes; }
 
             // move the offset target's PARENT pivot to the position and orientation the update loop will be using during play
             Vector3 footPos = lp.GetBonePosition(footBone);
@@ -82,7 +76,7 @@ namespace jokerispunk
             Vector3 distalPos = footPos + (distal * offsetLengthDistal);
 
             // move the offsetter target to that position
-            // this establishes a relative position to its parent that will be maintained via parenting as the local position
+            // this establishes a relative position to its parent that will thereafter be maintained via inheritance as the local position
             tf.position = distalPos;
             Debug.Log(string.Format("[SoccerBox] [AutoCalib] Moved collider offset distally, displacement {0}", tf.localPosition));
 
@@ -114,16 +108,12 @@ namespace jokerispunk
 
             Transform tf;
             HumanBodyBones footBone;
-            if (isRFoot)
-            {
+            if (isRFoot) {
                 tf = sb.loopRefs.rFootTarget;
-                footBone = HumanBodyBones.RightFoot;
-            }
-            else
-            {
+                footBone = HumanBodyBones.RightFoot; }
+            else {
                 tf = sb.loopRefs.lFootTarget;
-                footBone = HumanBodyBones.LeftFoot;
-            }
+                footBone = HumanBodyBones.LeftFoot; }
 
             // move the offset target's PARENT pivot to the position and orientation the update loop will be using during play
             Vector3 footPos;

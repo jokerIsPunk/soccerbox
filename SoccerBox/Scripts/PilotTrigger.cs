@@ -3,20 +3,15 @@ using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
-using jokerispunk;
 
 namespace jokerispunk
 {
     public class PilotTrigger : UdonSharpBehaviour
     {
         [Space(20)]
-        [Header("This architecture enables the update loop trigger only if the local player is within. It thereby skips unnecessary calls of OnPlayerTriggerStay for non-local players.")]
-        [Space(20)]
         [Header("(do not change)")]
         public SoccerBox sb;
         public UdonBehaviour loopUB;
-
-        private Collider thisCollider;
 
         void Start()
         {
@@ -53,14 +48,16 @@ namespace jokerispunk
 
         private bool _DetermineInitState()
         {
-            // if the play area is null or disabled, then infer that the creator wants the loop to always run
+            // if the play area is null, disabled, or missing a collider then infer that the creator wants the loop to always run
             if (sb.playArea == null) return true;
             else
                 if (!sb.playArea.gameObject.activeSelf) return true;
 
+            Collider thisCollider = (Collider)GetComponent(typeof(Collider));
+            if (thisCollider == null) return true;
+
             // if the play area is valid and enabled, then determine whether player has spawned inside or outside
             Vector3 posAtStart = Networking.LocalPlayer.GetPosition() + Vector3.up;
-            thisCollider = (Collider)GetComponent(typeof(Collider));
             return thisCollider.bounds.Contains(posAtStart);
         }
     }

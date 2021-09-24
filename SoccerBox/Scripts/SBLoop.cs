@@ -3,7 +3,6 @@ using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
-using jokerispunk;
 
 namespace jokerispunk
 {
@@ -16,13 +15,10 @@ namespace jokerispunk
         public Rigidbody rFootColl, lFootColl, rKneeColl, lKneeColl, headColl;
         public Transform chestColl;
 
-        // bone and tracking point proxy refs
-        //public Transform rFootPivot, lFootPivot, headPivot;
-
         // child transforms of bone and tracking proxies; used for non-Udon space offset calculation
         public Transform rFootTarget, lFootTarget, headTarget;
 
-        private VRCPlayerApi localPlayer;
+        private VRCPlayerApi lp;
         private float maxCollStray = 0.6f;
         private float maxCollStraySqr = 0f;
 
@@ -30,35 +26,28 @@ namespace jokerispunk
         private void Start()
         {
             // init and refs
-            localPlayer = Networking.LocalPlayer;
+            lp = Networking.LocalPlayer;
             maxCollStraySqr = Mathf.Pow(maxCollStray, 2);
         }
 
         private void FixedUpdate()
         {
             // update offsetter pivot transforms
-            VRCPlayerApi.TrackingData headTracking = localPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Head);
+            VRCPlayerApi.TrackingData headTracking = lp.GetTrackingData(VRCPlayerApi.TrackingDataType.Head);
             headTarget.parent.SetPositionAndRotation(headTracking.position, headTracking.rotation);
-            rFootTarget.parent.SetPositionAndRotation(localPlayer.GetBonePosition(HumanBodyBones.RightFoot), localPlayer.GetBoneRotation(HumanBodyBones.RightFoot));
-            lFootTarget.parent.SetPositionAndRotation(localPlayer.GetBonePosition(HumanBodyBones.LeftFoot), localPlayer.GetBoneRotation(HumanBodyBones.LeftFoot));
+            rFootTarget.parent.SetPositionAndRotation(lp.GetBonePosition(HumanBodyBones.RightFoot), lp.GetBoneRotation(HumanBodyBones.RightFoot));
+            lFootTarget.parent.SetPositionAndRotation(lp.GetBonePosition(HumanBodyBones.LeftFoot), lp.GetBoneRotation(HumanBodyBones.LeftFoot));
 
             // chest special case
-            chestColl.position = localPlayer.GetBonePosition(HumanBodyBones.Chest);
+            chestColl.position = lp.GetBonePosition(HumanBodyBones.Chest);
 
             // update velocities!
             _VelocityFollow(rFootTarget.position, rFootColl);
             _VelocityFollow(lFootTarget.position, lFootColl);
             _VelocityFollow(headTarget.position, headColl);
-            _VelocityFollow(localPlayer.GetBonePosition(HumanBodyBones.RightLowerLeg), rKneeColl);
-            _VelocityFollow(localPlayer.GetBonePosition(HumanBodyBones.LeftLowerLeg), lKneeColl);
+            _VelocityFollow(lp.GetBonePosition(HumanBodyBones.RightLowerLeg), rKneeColl);
+            _VelocityFollow(lp.GetBonePosition(HumanBodyBones.LeftLowerLeg), lKneeColl);
         }
-
-        //public override void OnPlayerTriggerStay(VRCPlayerApi player)
-        //{
-        //    if (!player.isLocal) return;
-
-
-        //}
 
         public void _VelocityFollow(Vector3 target, Rigidbody rb)
         {
@@ -78,6 +67,7 @@ namespace jokerispunk
             }
         }
 
+        // called from other scripts as part of enabling/disabling the whole body collider system
         public void _SetCollidersState(bool state)
         {
             rFootColl.gameObject.SetActive(state);

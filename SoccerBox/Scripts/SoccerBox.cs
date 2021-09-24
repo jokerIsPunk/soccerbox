@@ -20,7 +20,7 @@ namespace jokerispunk
 
         void Start()
         {
-            // if user ignored the warning and scaled the top-level object, try to unbreak it
+            // if user ignored my warning and scaled the top-level object, try to unbreak it, and don't spare any sass 'cause life is short
             if (playArea != null)
                 if (playArea.parent.localScale != Vector3.one)
                 {
@@ -71,6 +71,7 @@ namespace jokerispunk
             }
         }
 
+        // easy-to-call generic log warning
         public void _UnexpectedFail(GameObject context)
         {
             Debug.LogWarning(string.Format("[SoccerBox] Unexpected error on gameobject {0}! Is a reference broken on one of the Udon scripts?", context.name), context);

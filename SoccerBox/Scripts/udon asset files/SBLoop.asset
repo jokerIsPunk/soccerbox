@@ -584,7 +584,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: localPlayer
+      Data: lp
     - Name: $v
       Entry: 7
       Data: 29|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -611,10 +611,10 @@ MonoBehaviour:
       Data: VRCSDKBaseVRCPlayerApi
     - Name: symbolOriginalName
       Entry: 1
-      Data: localPlayer
+      Data: lp
     - Name: symbolUniqueName
       Entry: 1
-      Data: localPlayer
+      Data: lp
     - Name: symbolDefaultValue
       Entry: 6
       Data: 
