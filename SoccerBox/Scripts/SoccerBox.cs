@@ -12,15 +12,15 @@ namespace jokerispunk
         [Space(20)]
         [Header("(do not change below)")]
         public SBConfig userConfig;
-        [HideInInspector] public Transform playArea;
+        public Transform playArea;
         public Net net;
         public SBLoop loopRefs;
         public FootColliderCalibration calibProgram;
-        public Collider[] bodyColliders;
+        public GameObject[] bodyCollidersGO;
 
         void Start()
         {
-            // if user ignored the warning and scaled the top-level object, unbreak it
+            // if user ignored the warning and scaled the top-level object, try to unbreak it
             if (playArea.parent.localScale != Vector3.one)
             {
                 Debug.LogWarning("[SoccerBox] You scaled the top-level prefab GameObject. I specifically told you not to do that. Attempting runtime fix (also with an attitude)...");
@@ -29,9 +29,28 @@ namespace jokerispunk
             }
 
             // body colliders ignore collisions between themselves; otherwise they keep calling tons of ownership transfers
-            for (int i = 0; i < bodyColliders.Length; i++)
+            _IgnoreSelfCollisions();
+        }
+
+        private void _IgnoreSelfCollisions()
+        {
+            // start with the GameObject array of body colliders
+            // build an analogous Collider array, and populate it with the Collider component from each gameobject
+            int colliderCount = bodyCollidersGO.Length;
+            Collider[] bodyCollidersColl = new Collider[colliderCount];
+            for (int i = 0; i < colliderCount; i++)
             {
-                if (bodyColliders[i] == null) { _UnexpectedFail(gameObject); continue; }
+                if (bodyCollidersGO[i] == null) { _UnexpectedFail(gameObject); continue; }
+
+                Collider coll = (Collider)bodyCollidersGO[i].GetComponent(typeof(Collider));
+                bodyCollidersColl[i] = coll;
+            }
+
+            // iterate through the new Collider array to generate every combination of two
+            // send those combinations as arguments to Physics.IgnoreCollision
+            for (int i = 0; i < bodyCollidersColl.Length; i++)
+            {
+                if (bodyCollidersColl[i] == null) { _UnexpectedFail(gameObject); continue; }
                 #region rubber_duck0
                 // each element of the array ignores every element subsequent to it
                 // as each element is reached, it is already ignoring every element prior to it
@@ -42,11 +61,11 @@ namespace jokerispunk
                 //      at that point i is at length - 1 (i.e. highest range index); j is at length - 0 (i.e. out of range)
                 //      thus the inner loop does not execute because the condition is not met
                 #endregion rubber_duck0
-                for (int j = i + 1; j < bodyColliders.Length; j++)
+                for (int j = i + 1; j < bodyCollidersGO.Length; j++)
                 {
-                    if (bodyColliders[j] == null) continue;
-                    Debug.Log(string.Format("[SoccerBox] Ignoring collisions beween {0} and {1}...", bodyColliders[i].name, bodyColliders[j].name));
-                    Physics.IgnoreCollision(bodyColliders[i], bodyColliders[j]);
+                    if (bodyCollidersColl[j] == null) continue;
+                    Debug.Log(string.Format("[SoccerBox] Ignoring collisions beween {0} and {1}...", bodyCollidersColl[i].name, bodyCollidersColl[j].name));
+                    Physics.IgnoreCollision(bodyCollidersColl[i], bodyCollidersColl[j]);
                 }
             }
         }

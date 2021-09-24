@@ -17,7 +17,7 @@ namespace jokerispunk
         public Transform chestColl;
 
         // bone and tracking point proxy refs
-        public Transform rFootPivot, lFootPivot, headPivot;
+        //public Transform rFootPivot, lFootPivot, headPivot;
 
         // child transforms of bone and tracking proxies; used for non-Udon space offset calculation
         public Transform rFootTarget, lFootTarget, headTarget;
@@ -38,11 +38,11 @@ namespace jokerispunk
         {
             if (!player.isLocal) return;
 
-            // update offsetter transforms
+            // update offsetter pivot transforms
             VRCPlayerApi.TrackingData headTracking = localPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Head);
-            headPivot.SetPositionAndRotation(headTracking.position, headTracking.rotation);
-            rFootPivot.SetPositionAndRotation(localPlayer.GetBonePosition(HumanBodyBones.RightFoot), localPlayer.GetBoneRotation(HumanBodyBones.RightFoot));
-            lFootPivot.SetPositionAndRotation(localPlayer.GetBonePosition(HumanBodyBones.LeftFoot), localPlayer.GetBoneRotation(HumanBodyBones.LeftFoot));
+            headTarget.parent.SetPositionAndRotation(headTracking.position, headTracking.rotation);
+            rFootTarget.parent.SetPositionAndRotation(localPlayer.GetBonePosition(HumanBodyBones.RightFoot), localPlayer.GetBoneRotation(HumanBodyBones.RightFoot));
+            lFootTarget.parent.SetPositionAndRotation(localPlayer.GetBonePosition(HumanBodyBones.LeftFoot), localPlayer.GetBoneRotation(HumanBodyBones.LeftFoot));
 
             // chest special case
             chestColl.position = localPlayer.GetBonePosition(HumanBodyBones.Chest);

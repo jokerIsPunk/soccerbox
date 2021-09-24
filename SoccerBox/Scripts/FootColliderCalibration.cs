@@ -22,8 +22,9 @@ namespace jokerispunk
         [Space(10)]
         [Header("(do not change)")]
         public Transform manualCalPoint;
-        public Transform rFootTarget;
-        public Transform lFootTarget;
+        public SoccerBox sb;
+        //public Transform rFootTarget;
+        //public Transform lFootTarget;
 
         private VRCPlayerApi lp;
         [HideInInspector] public bool manualDone = false;
@@ -38,14 +39,14 @@ namespace jokerispunk
 
         public void _DoAutoCalib()
         {
-            _AutoCalibrateLeg(rFootTarget, true);
-            _AutoCalibrateLeg(lFootTarget, false);
+            _AutoCalibrateLeg(sb.loopRefs.rFootTarget, true);
+            _AutoCalibrateLeg(sb.loopRefs.lFootTarget, false);
         }
 
         public void _ClearCalibration()
         {
-            rFootTarget.localPosition = Vector3.zero;
-            lFootTarget.localPosition = Vector3.zero;
+            sb.loopRefs.rFootTarget.localPosition = Vector3.zero;
+            sb.loopRefs.lFootTarget.localPosition = Vector3.zero;
         }
 
         // autocalibration makes educated guesses about where the middle of the player's foot should be
@@ -115,12 +116,12 @@ namespace jokerispunk
             HumanBodyBones footBone;
             if (isRFoot)
             {
-                tf = rFootTarget;
+                tf = sb.loopRefs.rFootTarget;
                 footBone = HumanBodyBones.RightFoot;
             }
             else
             {
-                tf = lFootTarget;
+                tf = sb.loopRefs.lFootTarget;
                 footBone = HumanBodyBones.LeftFoot;
             }
 
