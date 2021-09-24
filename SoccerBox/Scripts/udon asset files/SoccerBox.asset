@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: SoccerBox
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: d23ebaefd10a1ab489537a1a1f45945b,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 5ffad68965de175488fa589d71d8272f,
     type: 2}
   udonAssembly: 
   assemblyError: 

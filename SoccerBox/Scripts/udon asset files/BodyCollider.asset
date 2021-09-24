@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: BodyCollider
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: b2e1781432aa47243bd4a7cdc2041c6d,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 1dadb7c5bc08cbc4fb12d5568911cd5c,
     type: 2}
   udonAssembly: 
   assemblyError: 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: BallTrigger
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: af9e3cdfdca69c249af4c3e83dd40cf3,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 5c85af360567b7541ae48129b529674d,
     type: 2}
   udonAssembly: ".data_start\r\n\r\n    .export verticalComponent\r\n    .export
     hitScale\r\n    \r\n    __Boolean_0: %SystemBoolean, null\r\n    __obj_0: %UnityEngineGameObject,

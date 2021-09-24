@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: FootColliderCalibration
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 58621ed6af70c784aaa3e3d3a3171ce0,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 360ed4ca600816642994cbfa2e40b538,
     type: 2}
   udonAssembly: 
   assemblyError: 
