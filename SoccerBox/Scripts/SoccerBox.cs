@@ -21,12 +21,13 @@ namespace jokerispunk
         void Start()
         {
             // if user ignored the warning and scaled the top-level object, try to unbreak it
-            if (playArea.parent.localScale != Vector3.one)
-            {
-                Debug.LogWarning("[SoccerBox] You scaled the top-level prefab GameObject. I specifically told you not to do that. Attempting runtime fix (also with an attitude)...");
-                playArea.localScale = Vector3.Scale(playArea.localScale, playArea.parent.localScale);
-                playArea.parent.localScale = Vector3.one;
-            }
+            if (playArea != null)
+                if (playArea.parent.localScale != Vector3.one)
+                {
+                    Debug.LogWarning("[SoccerBox] You scaled the top-level prefab GameObject. I specifically told you not to do that. Attempting runtime fix (also with an attitude)...");
+                    playArea.localScale = Vector3.Scale(playArea.localScale, playArea.parent.localScale);
+                    playArea.parent.localScale = Vector3.one;
+                }
 
             // body colliders ignore collisions between themselves; otherwise they keep calling tons of ownership transfers
             _IgnoreSelfCollisions();

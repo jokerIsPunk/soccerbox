@@ -1,0 +1,6 @@
+This license supercedes and replaces the release license contained in license.txt in this directory, if present.
+
+All materials in this directory and subdirectories are for testing purposes only, and may not be distributed. All other rights reserved.
+
+Affirmed by Joker is punk
+https://github.com/jokerIsPunk/

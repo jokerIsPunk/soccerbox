@@ -24,7 +24,7 @@ namespace jokerispunk
 
         private VRCPlayerApi localPlayer;
         private float maxCollStray = 0.6f;
-        private float maxCollStraySqr;
+        private float maxCollStraySqr = 0f;
 
 
         private void Start()
@@ -34,10 +34,8 @@ namespace jokerispunk
             maxCollStraySqr = Mathf.Pow(maxCollStray, 2);
         }
 
-        public override void OnPlayerTriggerStay(VRCPlayerApi player)
+        private void FixedUpdate()
         {
-            if (!player.isLocal) return;
-
             // update offsetter pivot transforms
             VRCPlayerApi.TrackingData headTracking = localPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Head);
             headTarget.parent.SetPositionAndRotation(headTracking.position, headTracking.rotation);
@@ -54,6 +52,13 @@ namespace jokerispunk
             _VelocityFollow(localPlayer.GetBonePosition(HumanBodyBones.RightLowerLeg), rKneeColl);
             _VelocityFollow(localPlayer.GetBonePosition(HumanBodyBones.LeftLowerLeg), lKneeColl);
         }
+
+        //public override void OnPlayerTriggerStay(VRCPlayerApi player)
+        //{
+        //    if (!player.isLocal) return;
+
+
+        //}
 
         public void _VelocityFollow(Vector3 target, Rigidbody rb)
         {

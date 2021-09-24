@@ -14,18 +14,14 @@ namespace jokerispunk
         [Space(20)]
         [Header("(do not change)")]
         public SoccerBox sb;
-        public Collider loopCollider;
+        public UdonBehaviour loopUB;
 
         private Collider thisCollider;
 
         void Start()
         {
-            // determine whether player has spawned inside the prefab
-            Vector3 posAtStart = Networking.LocalPlayer.GetPosition() + Vector3.up;
-            thisCollider = (Collider)GetComponent(typeof(Collider));
-            bool initState = thisCollider.bounds.Contains(posAtStart);
-
-            // set start state accordingly
+            // determine starting state of loop and objects
+            bool initState = _DetermineInitState();
             _SetSoccerBoxState(initState);
         }
 
@@ -45,14 +41,27 @@ namespace jokerispunk
 
         public void _SetSoccerBoxState(bool state)
         {
-            if (loopCollider == null) { sb._UnexpectedFail(gameObject); return; }
+            if (loopUB == null) { sb._UnexpectedFail(gameObject); return; }
 
-            loopCollider.enabled = state;
+            loopUB.enabled = state;
             sb.loopRefs._SetCollidersState(state);
 
             // redo autocalibration on activate, but not if player is using manual calibration
             if (state && !sb.calibProgram.manualDone)
                 sb.calibProgram._DoAutoCalib();
+        }
+
+        private bool _DetermineInitState()
+        {
+            // if the play area is null or disabled, then infer that the creator wants the loop to always run
+            if (sb.playArea == null) return true;
+            else
+                if (!sb.playArea.gameObject.activeSelf) return true;
+
+            // if the play area is valid and enabled, then determine whether player has spawned inside or outside
+            Vector3 posAtStart = Networking.LocalPlayer.GetPosition() + Vector3.up;
+            thisCollider = (Collider)GetComponent(typeof(Collider));
+            return thisCollider.bounds.Contains(posAtStart);
         }
     }
 }
