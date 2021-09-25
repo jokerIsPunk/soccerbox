@@ -38,7 +38,10 @@ namespace jokerispunk
         {
             if (loopUB == null) { sb._UnexpectedFail(gameObject); return; }
 
+            // body collider update loop
             loopUB.enabled = state;
+
+            // enable body collider GOs
             sb.loopRefs._SetCollidersState(state);
 
             // redo autocalibration on activate, but not if player is using manual calibration
