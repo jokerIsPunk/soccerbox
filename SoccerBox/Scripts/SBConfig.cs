@@ -39,10 +39,11 @@ namespace jokerispunk
             // construct and apply configured gravity
             Physics.gravity = new Vector3(0f, (-gravityAccel), 0f);
 
-            // decrease jump impulse proportionally with gravity decrease so jump height is maintained
+            // decrease jump impulse with gravity decrease so jump height is stabilized
+            // but weight the calculation towards original jump impulse for better effect
             VRCPlayerApi lp = Networking.LocalPlayer;
             float jumpImpluse = lp.GetJumpImpulse();
-            float jumpProportion = (-gravityAccel) / origGrav;
+            float jumpProportion = ((-gravityAccel + origGrav) / 2) / origGrav;
             lp.SetJumpImpulse(jumpImpluse * jumpProportion);
         }
     }
