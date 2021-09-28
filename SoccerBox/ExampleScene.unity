@@ -214,32 +214,32 @@ PrefabInstance:
     - target: {fileID: 1751316325748761674, guid: ab14196d8d2348547b5ed27ae003e83d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.16
+      value: 3.81
       objectReference: {fileID: 0}
     - target: {fileID: 1751316325748761674, guid: ab14196d8d2348547b5ed27ae003e83d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.75
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 1751316325748761674, guid: ab14196d8d2348547b5ed27ae003e83d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.88
+      value: 16.09
       objectReference: {fileID: 0}
     - target: {fileID: 3631064934446436433, guid: ab14196d8d2348547b5ed27ae003e83d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.36
+      value: -3.84
       objectReference: {fileID: 0}
     - target: {fileID: 3631064934446436433, guid: ab14196d8d2348547b5ed27ae003e83d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.24
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 3631064934446436433, guid: ab14196d8d2348547b5ed27ae003e83d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.89
+      value: 15.93
       objectReference: {fileID: 0}
     - target: {fileID: 6254112123613435246, guid: ab14196d8d2348547b5ed27ae003e83d,
         type: 3}
@@ -304,17 +304,17 @@ PrefabInstance:
     - target: {fileID: 9110593463308386360, guid: ab14196d8d2348547b5ed27ae003e83d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.47
+      value: 1.015
       objectReference: {fileID: 0}
     - target: {fileID: 9110593463308386360, guid: ab14196d8d2348547b5ed27ae003e83d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.77
+      value: 0.81
       objectReference: {fileID: 0}
     - target: {fileID: 9110593463308386360, guid: ab14196d8d2348547b5ed27ae003e83d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.2
+      value: 16.502
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab14196d8d2348547b5ed27ae003e83d, type: 3}
