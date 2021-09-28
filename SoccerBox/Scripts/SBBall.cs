@@ -30,6 +30,7 @@ namespace jokerispunk
         private float interval = 0.5f;
         private float sleepInterval = 5f;
         [UdonSynced] private Vector3 pos = Vector3.zero;
+        private Vector3 lastPos = Vector3.zero;
         [UdonSynced] private Vector3 vel = Vector3.zero;
         [UdonSynced] private Vector3 angVel = Vector3.zero;
         [UdonSynced] private bool isPollUpdate = false;
@@ -103,6 +104,10 @@ namespace jokerispunk
 
         private void _ReceiveUpdate()
         {
+            // skip update entirely if the received data is identical re-sent and out-of-date data; VRChat often re-sends synced UB data, e.g. for new joiners
+            if (pos == lastPos) return;
+            else lastPos = pos;
+
             // tries to smooth paths through the air
             // if this update is only a periodic one during uninterrupted freefall (i.e. not called by collision), then presume the physics simulation to be faithful
             // and only roll back if the position desync is substantial
