@@ -16,7 +16,7 @@ namespace jokerispunk
         [Space(10)]
         [Header("(do not change)")]
         public Transform respawnPoint;
-        public VRCObjectSync respawnableBall;
+        public Transform respawnableBall;
         public SoccerBox sb;
 
         public void _Catch(Rigidbody rb)
@@ -37,13 +37,12 @@ namespace jokerispunk
             // but that's a lot of extra code and work, and nobody cares. WON'T FIX
         }
 
-        // special method for the ball; uses fancy object sync to skip interpolation
+        // special method for the ball; allows calling from UI button
         public void _RespawnBall()
         {
-            if (respawnableBall == null || respawnPoint == null) { sb._UnexpectedFail(gameObject); return; }
+            if (respawnableBall == null) { sb._UnexpectedFail(gameObject); return; }
 
-            Networking.SetOwner(Networking.LocalPlayer, respawnableBall.gameObject);           
-            respawnableBall.TeleportTo(respawnPoint);
+            _Respawn(respawnableBall);
         }
     }
 }
