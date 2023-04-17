@@ -12,28 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: BallTrigger
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 5c85af360567b7541ae48129b529674d,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 257339c217f1e2643b42a44d8c31fccf,
     type: 2}
   udonAssembly: ".data_start\r\n\r\n    .export verticalComponent\r\n    .export
     hitScale\r\n    \r\n    __Boolean_0: %SystemBoolean, null\r\n    __obj_0: %UnityEngineGameObject,
     this\r\n    __player_0: %VRCSDKBaseVRCPlayerApi, null\r\n    __obj_1: %UnityEngineGameObject,
     this\r\n    __Vector3_0: %UnityEngineVector3, null\r\n    __Vector3_1: %UnityEngineVector3,
     null\r\n    __instance_0: %UnityEngineTransform, this\r\n    __instance_1: %UnityEngineTransform,
-    this\r\n    __instance_2: %VRCSDKBaseVRCPlayerApi, null\r\n    __Vector3_2: %UnityEngineVector3,
-    null\r\n    __Single_0: %SystemSingle, null\r\n    __Single_1: %SystemSingle,
-    null\r\n    __Vector3_3: %UnityEngineVector3, null\r\n    __instance_3: %UnityEngineRigidbody,
-    null\r\n    __value_0: %UnityEngineVector3, null\r\n    __Vector3_4: %UnityEngineVector3,
-    null\r\n    __Vector3_5: %UnityEngineVector3, null\r\n    __instance_4: %UnityEngineRigidbody,
-    null\r\n    __instance_5: %UnityEngineTransform, this\r\n    __type_0: %SystemType,
-    null\r\n    __instance_6: %UnityEngineTransform, this\r\n    __Type_0: %SystemType,
-    null\r\n    __instance_7: %UnityEngineTransform, this\r\n    __instance_8: %UnityEngineTransform,
-    this\r\n    lp: %VRCSDKBaseVRCPlayerApi, null\r\n    parentRb: %UnityEngineRigidbody,
-    null\r\n    parentGO: %UnityEngineGameObject, this\r\n    hitVector: %UnityEngineVector3,
-    null\r\n    verticalComponent: %SystemSingle, null\r\n    hitScale: %SystemSingle,
-    null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export _interact\r\n   
-    \r\n    _interact:\r\n    \r\n        PUSH, parentGO\r\n        PUSH, __obj_0\r\n       
-    COPY\r\n        PUSH, __obj_0\r\n        PUSH, __Boolean_0\r\n        EXTERN,
-    \"VRCSDKBaseNetworking.__IsOwner__UnityEngineGameObject__SystemBoolean\"\r\n       
+    this\r\n    __instance_2: %VRCSDKBaseVRCPlayerApi, null\r\n    __instance_3:
+    %UnityEngineVector3, null\r\n    __value_0: %SystemSingle, null\r\n    __Single_0:
+    %SystemSingle, null\r\n    __Vector3_2: %UnityEngineVector3, null\r\n    __instance_4:
+    %UnityEngineRigidbody, null\r\n    __value_1: %UnityEngineVector3, null\r\n   
+    __Vector3_3: %UnityEngineVector3, null\r\n    __Vector3_4: %UnityEngineVector3,
+    null\r\n    __instance_5: %UnityEngineRigidbody, null\r\n    __instance_6: %UnityEngineTransform,
+    this\r\n    __type_0: %SystemType, null\r\n    __instance_7: %UnityEngineTransform,
+    this\r\n    __Type_0: %SystemType, null\r\n    __instance_8: %UnityEngineTransform,
+    this\r\n    __instance_9: %UnityEngineTransform, this\r\n    lp: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    parentRb: %UnityEngineRigidbody, null\r\n    parentGO: %UnityEngineGameObject,
+    this\r\n    hitVector: %UnityEngineVector3, null\r\n    verticalComponent: %SystemSingle,
+    null\r\n    hitScale: %SystemSingle, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n   
+    .export _interact\r\n    \r\n    _interact:\r\n    \r\n        PUSH, parentGO\r\n       
+    PUSH, __obj_0\r\n        COPY\r\n        PUSH, __obj_0\r\n        PUSH, __Boolean_0\r\n       
+    EXTERN, \"VRCSDKBaseNetworking.__IsOwner__UnityEngineGameObject__SystemBoolean\"\r\n       
     PUSH, __Boolean_0\r\n        JUMP_IF_FALSE, 0x00000044\r\n        JUMP, 0x00000084\r\n       
     PUSH, lp\r\n        PUSH, __player_0\r\n        COPY\r\n        PUSH, parentGO\r\n       
     PUSH, __obj_1\r\n        COPY\r\n        PUSH, __player_0\r\n        PUSH, __obj_1\r\n       
@@ -47,19 +47,19 @@ MonoBehaviour:
     PUSH, hitVector\r\n        PUSH, verticalComponent\r\n        EXTERN, \"UnityEngineVector3.__set_y__SystemSingle\"\r\n       
     PUSH, hitScale\r\n        PUSH, hitVector\r\n        PUSH, hitVector\r\n       
     EXTERN, \"UnityEngineVector3.__op_Multiply__SystemSingle_UnityEngineVector3__UnityEngineVector3\"\r\n       
-    PUSH, parentRb\r\n        PUSH, __instance_3\r\n        COPY\r\n        PUSH,
-    parentRb\r\n        PUSH, __instance_4\r\n        COPY\r\n        PUSH, __instance_4\r\n       
-    PUSH, __Vector3_4\r\n        EXTERN, \"UnityEngineRigidbody.__get_velocity__UnityEngineVector3\"\r\n       
-    PUSH, __Vector3_4\r\n        PUSH, hitVector\r\n        PUSH, __value_0\r\n       
+    PUSH, parentRb\r\n        PUSH, __instance_4\r\n        COPY\r\n        PUSH,
+    parentRb\r\n        PUSH, __instance_5\r\n        COPY\r\n        PUSH, __instance_5\r\n       
+    PUSH, __Vector3_3\r\n        EXTERN, \"UnityEngineRigidbody.__get_velocity__UnityEngineVector3\"\r\n       
+    PUSH, __Vector3_3\r\n        PUSH, hitVector\r\n        PUSH, __value_1\r\n       
     EXTERN, \"UnityEngineVector3.__op_Addition__UnityEngineVector3_UnityEngineVector3__UnityEngineVector3\"\r\n       
-    PUSH, __instance_3\r\n        PUSH, __value_0\r\n        EXTERN, \"UnityEngineRigidbody.__set_velocity__UnityEngineVector3__SystemVoid\"\r\n       
+    PUSH, __instance_4\r\n        PUSH, __value_1\r\n        EXTERN, \"UnityEngineRigidbody.__set_velocity__UnityEngineVector3__SystemVoid\"\r\n       
     JUMP, 0xFFFFFFFC\r\n    \r\n    .export _start\r\n    \r\n    _start:\r\n   
     \r\n        PUSH, lp\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n       
-    PUSH, __instance_6\r\n        PUSH, __instance_5\r\n        EXTERN, \"UnityEngineTransform.__get_parent__UnityEngineTransform\"\r\n       
-    PUSH, __Type_0\r\n        PUSH, __type_0\r\n        COPY\r\n        PUSH, __instance_5\r\n       
+    PUSH, __instance_7\r\n        PUSH, __instance_6\r\n        EXTERN, \"UnityEngineTransform.__get_parent__UnityEngineTransform\"\r\n       
+    PUSH, __Type_0\r\n        PUSH, __type_0\r\n        COPY\r\n        PUSH, __instance_6\r\n       
     PUSH, __type_0\r\n        PUSH, parentRb\r\n        EXTERN, \"UnityEngineTransform.__GetComponent__SystemType__UnityEngineComponent\"\r\n       
-    PUSH, __instance_8\r\n        PUSH, __instance_7\r\n        EXTERN, \"UnityEngineTransform.__get_parent__UnityEngineTransform\"\r\n       
-    PUSH, __instance_7\r\n        PUSH, parentGO\r\n        EXTERN, \"UnityEngineTransform.__get_gameObject__UnityEngineGameObject\"\r\n       
+    PUSH, __instance_9\r\n        PUSH, __instance_8\r\n        EXTERN, \"UnityEngineTransform.__get_parent__UnityEngineTransform\"\r\n       
+    PUSH, __instance_8\r\n        PUSH, parentGO\r\n        EXTERN, \"UnityEngineTransform.__get_gameObject__UnityEngineGameObject\"\r\n       
     JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
@@ -645,8 +645,5 @@ MonoBehaviour:
       speed of the hit increases the farther they are from the ball, so they control
       the hit speed by controlling their position. This allows for dribbling close
       up or hard kicks from a distance.","layer":0,"elementTypeColor":{"r":0.0,"g":0.0,"b":0.0,"a":0.0}}'
-  viewTransform:
-    position: {x: 702.4, y: 170.4}
-    scale: 0.2471847
   version: 1.0.0
   showAssembly: 0

@@ -14,12 +14,13 @@ namespace jokerispunk
         [Header("Note: Do NOT scale this parent object. Scale child object \"Play Area\" instead.")]
         [Space(20)]
         [Header("User configuration options:")]
+        [SerializeField] bool useLowGravity = false;
         [Tooltip("Set the gravity acceleration (meters/s) for all physical objects and players. 5.0 m/s is recommended.")]
         [Range(5.0f, 9.81f)] public float gravityAccel = 5.0f;
         [Tooltip("The net will catch any GameObject whose name contains any of these words. Additionally, those objects cannot be on the Pickup layer (use Walkthrough instead).")]
         public string[] catchNamesContaining = { "ball" };
-        [Tooltip("Check this to ignore player body collisions with objects that don't contain the string \"ball\" in their name.")]
-        public bool ballsOnly = false;
+        [Tooltip("Uncheck this to allow player body collisions with objects that don't contain the string \"ball\" in their name.")]
+        public bool ballsOnly = true;
 
         private void Start()
         {
@@ -28,7 +29,8 @@ namespace jokerispunk
                 catchNamesContaining[i] = catchNamesContaining[i].ToLower();
 
             // gravity
-            _ConvertGravity();
+            if (useLowGravity)
+                _ConvertGravity();
         }
 
         private void _ConvertGravity()

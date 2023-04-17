@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: DefaultWorldSettings
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 366f89742afd0a1478c9b2d918d3b7b1,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: c2b25c7b91915b84f930b41e0dea34d2,
     type: 2}
   udonAssembly: ".data_start\r\n\r\n    .export jumpImpulse\r\n    .export walkSpeed\r\n   
     .export runSpeed\r\n    .export strafeSpeed\r\n    \r\n    __Boolean_0: %SystemBoolean,
@@ -311,8 +311,5 @@ MonoBehaviour:
   - type: 4
     uid: 4df28d22-f655-4ebb-951d-06f65a528c59
     jsonData: '{"visible":true,"layout":{"serializedVersion":"2","x":10.0,"y":20.0,"width":0.0,"height":0.0}}'
-  viewTransform:
-    position: {x: 942.3403, y: 146.69994}
-    scale: 0.49717674
   version: 1.0.0
   showAssembly: 1

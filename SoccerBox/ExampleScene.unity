@@ -318,6 +318,108 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab14196d8d2348547b5ed27ae003e83d, type: 3}
+--- !u!1 &1743056504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6254112123613435247, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5134693417259206493, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3002335115535333924, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6388150810576671612, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1302777372901001900, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1665420905506635528, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7515450041388269880, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8680174589937917722, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2810070975687748571, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5977330184489501443, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1147685879942171049, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6162562453952178861, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6681646933422461995, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3563636778763057674, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6254112122717763169, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3699609544152667989, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743056520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2809106167008310935, guid: ab14196d8d2348547b5ed27ae003e83d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743056503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1918087446
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +617,7 @@ MonoBehaviour:
   contentGore: 0
   contentOther: 0
   releasePublic: 0
-  unityVersion: 2019.4.30f1
+  unityVersion: 2019.4.31f1
   Name: 
   NSFW: 0
   SpawnPosition: {x: 0, y: 0, z: 0}
@@ -581,6 +683,43 @@ MonoBehaviour:
   RenderReflectionBounces: 0
   RenderReflectionIntensity: 0
   RenderSkybox: {fileID: 0}
+  NetworkIDs:
+  - gameObject: {fileID: 1743056504}
+    ID: 10
+  - gameObject: {fileID: 1743056515}
+    ID: 11
+  - gameObject: {fileID: 1743056512}
+    ID: 12
+  - gameObject: {fileID: 1743056511}
+    ID: 13
+  - gameObject: {fileID: 1743056516}
+    ID: 14
+  - gameObject: {fileID: 1743056505}
+    ID: 15
+  - gameObject: {fileID: 1743056513}
+    ID: 16
+  - gameObject: {fileID: 1743056518}
+    ID: 17
+  - gameObject: {fileID: 1743056519}
+    ID: 18
+  - gameObject: {fileID: 1743056520}
+    ID: 19
+  - gameObject: {fileID: 1743056510}
+    ID: 20
+  - gameObject: {fileID: 1743056507}
+    ID: 21
+  - gameObject: {fileID: 1743056508}
+    ID: 22
+  - gameObject: {fileID: 1743056517}
+    ID: 23
+  - gameObject: {fileID: 1743056509}
+    ID: 24
+  - gameObject: {fileID: 1743056506}
+    ID: 25
+  - gameObject: {fileID: 1743056514}
+    ID: 26
+  - gameObject: {fileID: 5958022882174764301}
+    ID: 27
   portraitCameraPositionOffset: {x: 0, y: 0, z: 0}
   portraitCameraRotationOffset: {x: 0, y: 1, z: 0, w: -0.00000004371139}
 --- !u!114 &5636863252744046474
@@ -603,7 +742,7 @@ MonoBehaviour:
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
   _syncMethod: 0
-  serializedProgramAsset: {fileID: 11400000, guid: 366f89742afd0a1478c9b2d918d3b7b1,
+  serializedProgramAsset: {fileID: 11400000, guid: c2b25c7b91915b84f930b41e0dea34d2,
     type: 2}
   programSource: {fileID: 11400000, guid: 20708a1a86a33fa4a80833be0a215e1c, type: 2}
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgQAAAAAAAAAAi8CAAAAAUoAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBTAGkAbgBnAGwAZQAsACAAbQBzAGMAbwByAGwAaQBiAF0AXQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAgAAAAYCAAAAAAAAACcBBAAAAHQAeQBwAGUAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAJwEKAAAAUwB5AG0AYgBvAGwATgBhAG0AZQABCwAAAGoAdQBtAHAASQBtAHAAdQBsAHMAZQAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAGkAbgBnAGwAZQAsACAAbQBzAGMAbwByAGwAaQBiAB8BBQAAAFYAYQBsAHUAZQAAAEBABwUCMAIAAAADAAAABgIAAAAAAAAAJwEEAAAAdAB5AHAAZQABFwAAAFMAeQBzAHQAZQBtAC4AUwB0AHIAaQBuAGcALAAgAG0AcwBjAG8AcgBsAGkAYgAnAQoAAABTAHkAbQBiAG8AbABOAGEAbQBlAAEJAAAAdwBhAGwAawBTAHAAZQBlAGQAJwEEAAAAdAB5AHAAZQABFwAAAFMAeQBzAHQAZQBtAC4AUwBpAG4AZwBsAGUALAAgAG0AcwBjAG8AcgBsAGkAYgAfAQUAAABWAGEAbAB1AGUAAAAAQAcFAjACAAAABAAAAAYCAAAAAAAAACcBBAAAAHQAeQBwAGUAARcAAABTAHkAcwB0AGUAbQAuAFMAdAByAGkAbgBnACwAIABtAHMAYwBvAHIAbABpAGIAJwEKAAAAUwB5AG0AYgBvAGwATgBhAG0AZQABCAAAAHIAdQBuAFMAcABlAGUAZAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAGkAbgBnAGwAZQAsACAAbQBzAGMAbwByAGwAaQBiAB8BBQAAAFYAYQBsAHUAZQAAAIBABwUCMAIAAAAFAAAABgIAAAAAAAAAJwEEAAAAdAB5AHAAZQABFwAAAFMAeQBzAHQAZQBtAC4AUwB0AHIAaQBuAGcALAAgAG0AcwBjAG8AcgBsAGkAYgAnAQoAAABTAHkAbQBiAG8AbABOAGEAbQBlAAELAAAAcwB0AHIAYQBmAGUAUwBwAGUAZQBkACcBBAAAAHQAeQBwAGUAARcAAABTAHkAcwB0AGUAbQAuAFMAaQBuAGcAbABlACwAIABtAHMAYwBvAHIAbABpAGIAHwEFAAAAVgBhAGwAdQBlAAAAAEAHBQcFBwU=
